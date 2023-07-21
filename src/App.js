@@ -6,6 +6,7 @@ import Newscomponents from './components/Newscomponents';
 
 
 export default function App() {
+
   return (
     <div>
    <Navbar/>

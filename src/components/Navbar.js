@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 export default class Navbar extends Component {
   render() {
     return (
-     <nav className="navbar navbar-expand-lg bg-body-tertiary">
+     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
     <a className="navbar-brand" href="/">Bihari News</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,6 +21,10 @@ export default class Navbar extends Component {
         </li>  
       </ul>
     </div>
+     <div class="form-check form-switch">
+       <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+       <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+</div>
   </div>
 </nav>
     )
