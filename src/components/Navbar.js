@@ -1,13 +1,18 @@
-
-
-import React, { Component } from 'react'
+import React, { Component }  from 'react'
+import myphoto from './myphoto.jpg'
 
 export default class Navbar extends Component {
+  constructor(props){
+    super(props);
+    this.state={      
+    }
+  }
   render() {
     return (
-     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+     <nav className={`navbar navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode}`}>
   <div className="container-fluid">
-    <a className="navbar-brand" href="/">Bihari News</a>
+    <img src={myphoto} style={{height:40, width:60}}  alt="ok" />
+    <a className="navbar-brand" href="/">Delay News</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -21,9 +26,9 @@ export default class Navbar extends Component {
         </li>  
       </ul>
     </div>
-     <div class="form-check form-switch">
-       <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-       <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+     <div className= {`form-check form-switch text-${this.props.mode===`light`?`dark`:`light`}`}>
+       <input className="form-check-input" onClick={this.props.togglee} type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+       <label className="form-check-label"  htmlFor="flexSwitchCheckChecked">{ this.props.mode===`light`? "Dark Mode": "Light Mode" }</label>
 </div>
   </div>
 </nav>
