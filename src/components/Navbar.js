@@ -1,16 +1,12 @@
-import React, { Component }  from 'react'
+import React from 'react'
 import myphoto from './myphoto.jpg'
 import { Link } from 'react-router-dom';
 
-export default class Navbar extends Component {
-  constructor(props){
-    super(props);
-    this.state={      
-    }
-  }
-  render() {
+const Navbar = (props) => {
+ 
+  
     return (
-     <nav className={`navbar navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode}`}>
+     <nav className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
   <div className="container-fluid">
     <img src={myphoto} style={{height:40, width:60}}  alt="ok" />
     <Link className="navbar-brand" to="/">Delay News</Link>
@@ -20,7 +16,7 @@ export default class Navbar extends Component {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className="nav-link active navbar" style=  {{color : props.mode ===`light`?`black`:`white`}} aria-current="page" to="/">Home</Link>
         </li>
        
          
@@ -33,15 +29,16 @@ export default class Navbar extends Component {
       
       </ul>
     </div>
-     <div className= {`form-check form-switch text-${this.props.mode===`light`?`dark`:`light`}`}>
-       <input className="form-check-input" onClick={this.props.togglee} type="checkbox" role="switch" id="flexSwitchCheckChecked" />
-       <label className="form-check-label"  htmlFor="flexSwitchCheckChecked">{ this.props.mode===`light`? "Dark Mode": "Light Mode" }</label>
+     <div className= {`form-check form-switch text-${props.mode===`light`?`dark`:`light`}`}>
+       <input className="form-check-input" onClick={props.togglee} type="checkbox" role="switch" id="flexSwitchCheckChecked" />
+       <label className="form-check-label"  htmlFor="flexSwitchCheckChecked">{props.mode===`light`? "Dark Mode": "Light Mode" }</label>
 </div>
   </div>
 </nav>
     )
-  }
+  
 }
+export default Navbar
 
 
 

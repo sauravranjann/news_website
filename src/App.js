@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react'
 import Navbar from './components/Navbar';
 import Newscomponents from './components/Newscomponents';
+
 import { useState } from 'react';
 import {
   BrowserRouter as Router,
@@ -11,7 +12,8 @@ import {
 
 
 
-export default function App()  {
+export default function App()
+ {
 
 
    const [mode, setmode] = useState("light")
@@ -47,4 +49,3 @@ export default function App()  {
    
   )
 }
-
